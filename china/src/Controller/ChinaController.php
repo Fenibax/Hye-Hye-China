@@ -17,4 +17,12 @@ class ChinaController extends AbstractController
             'controller_name' => 'ChinaController',
         ]);
     }
+        /**
+     * @Route("/evenements", name="evenements")
+     */
+    public function evenements()
+    {
+        return $this->render('china/evenements.html.twig');
+    }
+   
 }

@@ -27,7 +27,7 @@ class RegistrationController extends AbstractController
             $user->setPassword($hash);
             $manager->persist($user);
             $manager->flush();
-            return $this->redirectToRoute("login");
+            return $this->redirectToRoute("app_login");
         }
         return $this->render('registration/index.html.twig', [
             'controller_name' => 'RegistrationController',
