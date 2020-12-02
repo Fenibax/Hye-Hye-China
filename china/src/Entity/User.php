@@ -20,6 +20,10 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank
+     *  @Assert\Email(
+     *     message = "L'email est invalide"
+     * )
      */
     private $email;
 
@@ -31,21 +35,34 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank
      */
     private $password;
 
+        /**
+     * @Assert\NotBlank
+     * @Assert\EqualTo(
+     * propertyPath="password",
+     * message = "les deux mot de passe ne sont pas identiques"
+     * )
+     */
+    public $confirmPassword;
+
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $tel;
 
