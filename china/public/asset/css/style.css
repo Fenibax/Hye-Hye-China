@@ -12,3 +12,7 @@
 .img1{
     width: 30%;
 }
+.bloc5{
+    display: flex;
+    justify-content: space-between;
+}
