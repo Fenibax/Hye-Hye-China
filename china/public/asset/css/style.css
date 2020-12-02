@@ -3,16 +3,39 @@
     display: flex;
     width: 80%;
     justify-content: space-between;
+    padding: 5%;
 }
 .bloc{
     display: flex;
     flex-direction: column;
     align-content: center;
+    padding: 5%;
+    
 }
 .img1{
     width: 30%;
 }
+.bloc2{
+    padding: 5%;
+}
+.bloc3{
+    padding: 5%;
+}
+
+.bloc4{
+    padding: 5%;
+}
+
 .bloc5{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+}
+.fried{
+    width: 20%;
+}
+.bloc6{
+    display: flex;
+    justify-content: space-around;
 }
