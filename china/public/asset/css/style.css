@@ -116,3 +116,7 @@ nav:hover{
     display: flex;
     justify-content: space-between;
 }
+
+ .nav-item{
+    font-size: 1.3em;
+} 
