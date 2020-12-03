@@ -31,6 +31,11 @@ class ChinaController extends AbstractController
     {
         return $this->render('china/carteWE.html.twig');
     }
+
+
+    /** 
+     * @Route("/cartesemaine", name="cartesemaine")
+     */
    
      public function semaine()
      {
