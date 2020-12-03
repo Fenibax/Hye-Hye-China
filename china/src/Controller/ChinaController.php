@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ChinaController extends AbstractController
 {
     /**
-     * @Route("/china", name="china")
+     * @Route("/", name="china")
      */
     public function index(): Response
     {
@@ -32,4 +32,8 @@ class ChinaController extends AbstractController
         return $this->render('china/carteWE.html.twig');
     }
    
+     public function semaine()
+     {
+         return $this->render('china/cartesemaine.html.twig');
+     }
 }
