@@ -39,3 +39,13 @@
     display: flex;
     justify-content: space-around;
 }
+.micro{
+    display: flex;
+    justify-content: space-between;
+}
+
+.diner{
+    display: flex;
+    justify-content: space-between;
+}
+
