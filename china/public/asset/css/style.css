@@ -42,5 +42,11 @@
 
 body{
     background-size: cover;
+<<<<<<< HEAD
     background-image: url('../images/background.jpg');
 }
+=======
+    background-image: url("asset/images/background.jpg");
+}
+
+>>>>>>> 4e1769ac61f54555f7e3898edb6d6c18e7c17f35

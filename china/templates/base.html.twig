@@ -22,10 +22,10 @@
     <ul class="navbar-nav mr-auto">
      
       <li class="nav-item">
-        <a class="nav-link" href="/">Accueil</a>
+        <a class="nav-link" href="{{path('china')}}">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Carte Semaine</a>
+        <a class="nav-link" href="{{path('cartesemaine')}}">Carte Semaine</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Carte Week-end</a>
@@ -53,10 +53,7 @@
         {% endif %}
     
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
   </div>
  
 </nav>
