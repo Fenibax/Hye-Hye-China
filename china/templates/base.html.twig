@@ -39,10 +39,10 @@
         <a class="nav-link" href="{{path('Hye')}}">Hay Hay China</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Evenement</a>
+        <a class="nav-link" href="{{path('evenements')}}">Evenement</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="{{path('contact')}}">Contact</a>
       </li>
 
        {% if app.user %}
@@ -69,6 +69,47 @@
     <div class="container">
         {% block body %}{% endblock %}
         </div>
+        
         {% block javascripts %}{% endblock %}
+        
     </body>
+    
+
+{% block footer %}
+
+
+<footer>
+
+<div class="bloc6">
+<div>
+<h2>Restaurant Hye Hye China</h2>
+<p>Téléphone : </p>
+<p>"Nom du restaurant"</p>
+<p>"Adresse"</p>
+
+{# Liens réseaux sociaux ? #}
+<a href=""><i class="fab fa-facebook"></i></a>
+<a href=""><i class="fab fa-instagram"></i></a>
+
+
+</div>
+
+<div>
+
+<h2>Nos Horaires</h2>
+<p>Lundi: </p>
+<p>Mardi: </p>
+<p>Mercredi: </p>
+<p>Jeudi: </p>
+<p>Vendredi: </p>
+<p>Samedi: </p>
+<p>Dimanche: </p>
+
+</div>
+
+</div>
+
+</footer>
+
+{% endblock footer %}
 </html>
