@@ -42,12 +42,31 @@ class ChinaController extends AbstractController
          return $this->render('china/Hye.html.twig');
      }
 
-         /** 
+    /** 
      * @Route("/cartesemaine", name="cartesemaine")
      */
    
     public function semaine()
     {
         return $this->render('china/cartesemaine.html.twig');
+    }
+
+    /** 
+     * @Route("/contact", name="contact")
+     */
+   
+    public function contact()
+    {
+        return $this->render('china/contact.html.twig');
+    }
+
+
+    /** 
+     * @Route("/evenements", name="evenements")
+     */
+   
+    public function event()
+    {
+        return $this->render('china/evenements.html.twig');
     }
 }
