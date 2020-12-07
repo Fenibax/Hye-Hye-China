@@ -26,7 +26,7 @@ class BookingController extends AbstractController
     }
 
     /**
-     * @Route("/calendar", name="booking_calendar", methods={"GET"})
+     * @Route("/booking/calendar", name="booking_calendar", methods={"GET"})
      */
     public function calendar(): Response
     {
