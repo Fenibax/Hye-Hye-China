@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Booking index{% endblock %}
+{% block title %}Les réservation{% endblock %}
 
 {% block body %}
-    <h1>Booking index</h1>
+    <h1>Les réservation</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>BeginAt</th>
-                <th>EndAt</th>
-                <th>Title</th>
-                <th>actions</th>
+                <th>Heure de début</th>
+                <th>Heure de fin</th>
+                <th>Description</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ booking.title }}</td>
                 <td>
-                    <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
-                    <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+                    <a href="{{ path('booking_show', {'id': booking.id}) }}">Voir plus</a>
+                    <a href="{{ path('booking_edit', {'id': booking.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucune réservation prise</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('booking_new') }}">Create new</a>
+    <a href="{{ path('booking_new') }}">Prendre un nouvelle réservation</a>
 {% endblock %}
