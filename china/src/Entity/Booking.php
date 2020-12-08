@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\BookingRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,21 @@ class Booking
      * @ORM\Column(type="string", length=255)
      */
     private $title;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="bookings")
+     */
+    private $users;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Fidelity::class, mappedBy="booking", cascade={"persist", "remove"})
+     */
+    private $fidelity;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -72,4 +89,48 @@ class Booking
 
         return $this;
     }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->users->removeElement($user);
+
+        return $this;
+    }
+
+    public function getFidelity(): ?Fidelity
+    {
+        return $this->fidelity;
+    }
+
+    public function setFidelity(?Fidelity $fidelity): self
+    {
+        $this->fidelity = $fidelity;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newBooking = null === $fidelity ? null : $this;
+        if ($fidelity->getBooking() !== $newBooking) {
+            $fidelity->setBooking($newBooking);
+        }
+
+        return $this;
+    }
+
+
 }

@@ -34,6 +34,12 @@
         {% endfor %}
         </tbody>
     </table>
+<p>
+{# {% for b in booking.bookings %} #}
 
+{{booking.bookings|length}}
+Si vous arrivez à 5, vous avez une réduction de 10%.
+{# {% endfor %} #}
+</p>
     <a href="{{ path('booking_new') }}">Prendre un nouvelle réservation</a>
 {% endblock %}

@@ -64,4 +64,16 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         ;
     }
     */
+
+   public function findByBookingByUser($value): ?User
+    {
+        return $this->createQueryBuilder('u')
+  //      ->select('b.id')
+        ->leftJoin('u.bookings', 'b')
+            ->andWhere('u.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getSingleResult()
+        ;
+    } 
 }
