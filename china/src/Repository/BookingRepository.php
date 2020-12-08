@@ -47,4 +47,15 @@ class BookingRepository extends ServiceEntityRepository
         ;
     }
     */
+/*     public function findByBookingByUser($value): ?Booking
+    {
+        return $this->createQueryBuilder('b')
+        ->select('b.id')
+        ->innerJoin('b.users', 'u')
+            ->andWhere('u.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }  */
 }
