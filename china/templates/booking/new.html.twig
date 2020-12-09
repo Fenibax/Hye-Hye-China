@@ -1,11 +1,17 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Nouvelle réservation{% endblock %}
 
 {% block body %}
+{% if app.user %}
     <h1>Nouvelle réservation</h1>
 
     {{ include('booking/_form.html.twig') }} <br>
 
   <button type="button" class="btn btn-secondary"> <a href="{{ path('booking_index') }}">Revenir à la liste</a> </button>
+        {% else %}
+        <p>Veuillez vous connectez <a class="nav-link" href="{{path('app_login')}}"> <button>ici</button> </a> ou vous inscrire <a class="nav-link" href="{{path('registration')}}"><button>la</button></a> </p>
+    {% endif %}
 {% endblock %}
+

@@ -19,7 +19,7 @@ class FormulaireUserType extends AbstractType
             ->add('nom')
             ->add('tel')
             ->add('email', EmailType::class)
-          //  ->add('roles',  ChoiceType::class)
+           // ->add('roles',  ChoiceType::class)
             ->add('password', PasswordType::class)
             ->add('confirmPassword', PasswordType::class);
     }
