@@ -1,34 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Réservation{% endblock %}
+{% block title %}Réservation
+{% endblock %}
 
 {% block body %}
-    <h1>Réservation</h1>
+	{% if app.user %}
+		<h1>Réservation</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ booking.id }}</td>
-            </tr>
-            <tr>
-                <th>Heure de début</th>
-                <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Heure de fin</th>
-                <td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ booking.title }}</td>
-            </tr>
-        </tbody>
-    </table>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ booking.id }}</td>
+				</tr>
+				<tr>
+					<th>Heure de début</th>
+					<td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Heure de fin</th>
+					<td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ booking.title }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-    <a href="{{ path('booking_index') }}">Revenir à la liste</a>
+		<a href="{{ path('booking_index') }}">Revenir à la liste</a>
+		<br>
 
-    <a href="{{ path('booking_edit', {'id': booking.id}) }}">Editer</a>
+		<a href="{{ path('booking_edit', {'id': booking.id}) }}">Editer</a>
+		<br>
 
-    {{ include('booking/_delete_form.html.twig') }}
+		<a href="{{ path('booking_calendar') }}">Retourner au calendrier</a>
+
+		{{ include('booking/_delete_form.html.twig') }}
+	{% else %}
+		<p>Veuillez vous connectez
+			<a class="nav-link" href="{{path('app_login')}}">
+				<button>ici</button>
+			</a>
+			ou vous inscrire
+			<a class="nav-link" href="{{path('registration')}}">
+				<button>la</button>
+			</a>
+		</p>
+	{% endif %}
 {% endblock %}
