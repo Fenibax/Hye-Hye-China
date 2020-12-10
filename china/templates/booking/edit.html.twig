@@ -1,13 +1,19 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Modifier la réservation{% endblock %}
 
 {% block body %}
-    <h1>Modifier la réservation{</h1>
+{% if app.user %}
+    <h1>Modifier la réservation</h1>
 
-   <button type="button" class="btn btn-secondary">Secondary</button> {{ include('booking/_form.html.twig', {'button_label': 'Update'}) }}
+   {# <button type="button" class="btn btn-secondary">Secondary</button> #} {{ include('booking/_form.html.twig', {'button_label': 'Update'}) }}
 
    <button type="button" class="btn btn-secondary"> <a href="{{ path('booking_index') }}">Retour à liste</a></button>
 
     {{ include('booking/_delete_form.html.twig') }}
+        {% else %}
+        <p>Veuillez vous connectez <a class="nav-link" href="{{path('app_login')}}"> <button>ici</button> </a> ou vous inscrire <a class="nav-link" href="{{path('registration')}}"><button>la</button></a> </p>
+    {% endif %}
 {% endblock %}
+
