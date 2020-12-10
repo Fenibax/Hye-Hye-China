@@ -2,10 +2,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Les réservation{% endblock %}
-{% set fidel = booking.bookings|length %}
+{% set fidel = bookings.bookings|length %}
 {% set x = (100/5)*(fidel) %}
 {% block body %}
 {% if app.user %}
+<pre>
+    {{ dump(bookings.bookings) }}
+</pre>
     <h1>Les réservation</h1>
 
     <table class="table">
@@ -19,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for booking in bookings %}
+        {% for booking in bookings.bookings %}
             <tr>
                 <td>{{ booking.id }}</td>
                 <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
@@ -38,7 +41,6 @@
         </tbody>
     </table>
 <p>
-{# {% for b in booking.bookings %} #}
 
 Si vous arrivez à 5, vous avez une réduction de 10%. <br>
 
@@ -47,7 +49,7 @@ Si vous arrivez à 5, vous avez une réduction de 10%. <br>
   <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: {{x}}%;" aria-valuenow="{{fidel}}" aria-valuemin="0" aria-valuemax="125">{{fidel}}</div>
 </div>
 
-{# {% endfor %} #}
+ 
 </p>
     <a href="{{ path('booking_new') }}">Prendre un nouvelle réservation</a> <br>
     <a href="{{ path('booking_calendar') }}">Retourner au calendrier</a>
