@@ -1,6 +1,13 @@
 #carouselExampleControls{
     padding: 2%;
     
+    
+    
+}
+.carousel-caption{
+    color: rgb(17, 17, 17);
+    font-weight: bold;
+    font-size: 2em;
 }
 
 #intro{
