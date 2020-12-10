@@ -1,13 +1,16 @@
+
+
 #carouselExampleControls{
-    padding: 2%;
-    
-    
-    
+    padding: 2%;  
 }
 .carousel-caption{
-    color: rgb(17, 17, 17);
+    color: rgb(250, 248, 248);
     font-weight: bold;
-    font-size: 2em;
+    background-color: red;
+    width: 70%;
+    height: 35%;
+    border-radius: 30px;
+    
 }
 
 #intro{
@@ -49,16 +52,20 @@
 .bloc2{
     padding: 5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: justify-all;
 }
 
 
 .bloc5{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
     padding: 5%;
-    text-align: center;
+    text-align: justify;
+    
     
 }
 
