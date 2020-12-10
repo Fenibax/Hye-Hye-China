@@ -8,6 +8,7 @@ use App\Entity\Fidelity;
 use App\Form\BookingType;
 use App\Repository\BookingRepository;
 use App\Repository\FidelityRepository;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,22 +23,24 @@ class BookingController extends AbstractController
     /**
      * @Route("/", name="booking_index", methods={"GET"})
      */
-    public function index(BookingRepository $bookingRepository, FidelityRepository $fidelityRepository, UserInterface $user): Response
+    public function index(BookingRepository $bookingRepository, FidelityRepository $fidelityRepository, UserInterface $user, UserRepository $userRepository): Response
     {
-        $repo = $this->getDoctrine()->getRepository(User::class);
-        //    dd($repo, $user->getId());
-        $booking = $repo->findByBookingByUser($user->getId());
- //       dd($booking);
+   //     $repo = $this->getDoctrine()->getRepository(User::class);
+
+ //       $booking = $repo->findByBookingByUser($user->getId());
+ $userId = $this->getUser()->getId();
+ $booking = $userRepository->findByBookingByUser($userId);
+ dump($userRepository);
          $tab = $booking->getBookings();
-    //     dd(sizeof($tab));
+
          $fidelity = new Fidelity();
          $fidelity->setNombreReservation(sizeof($tab));
          $rendezvous = new Booking();
          $rendezvous ->setFidelity($fidelity);
         
         return $this->render('booking/index.html.twig', [
-            'bookings' => $bookingRepository->findAll(),
-            'booking' => $booking,
+        
+            'bookings' => $booking,
             'fidelity'=> sizeof($tab)
         ]);
     }
@@ -48,7 +51,7 @@ class BookingController extends AbstractController
     public function calendar(UserInterface $user): Response
     {
         $repo = $this->getDoctrine()->getRepository(User::class);
-        $booking = $repo->findByBookingByUser($user->getId());
+     //   $booking = $repo->findByBookingByUser($user->getId());
         return $this->render('booking/calendar.html.twig');
     }
 
@@ -56,7 +59,7 @@ class BookingController extends AbstractController
     /**
      * @Route("/new", name="booking_new", methods={"GET","POST"})
      */
-    public function new(Request $request, UserInterface $user): Response // 
+    public function new(Request $request, UserInterface $user, UserRepository $userRepository): Response // 
     {
         $fidelity = new Fidelity();
         $booking = new Booking();
@@ -64,8 +67,10 @@ class BookingController extends AbstractController
         $form->handleRequest($request);
         // dd($user);
         if ($form->isSubmitted() && $form->isValid()) {
-            $repo = $this->getDoctrine()->getRepository(User::class);
-            $b = $repo->findByBookingByUser($user->getId());
+           
+            $userId = $this->getUser()->getId();
+        
+            $b = $userRepository->findByBookingByUser($userId);
             $tab = $b->getBookings();
             $fidelity->setNombreReservation(sizeof($tab));
             $booking->setFidelity($fidelity);
