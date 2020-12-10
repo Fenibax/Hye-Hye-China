@@ -51,7 +51,11 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
       <li class="nav-item">
         <a class="nav-link" href="{{path('evenements')}}">Évènement</a>
       </li>
-      
+      {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item">
+        <a class="nav-link" href="{{path('user')}}">Évènement</a>
+      </li>
+      {% endif %}
 
        {% if app.user %}
         <li class="nav-item">
