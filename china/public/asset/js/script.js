@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var boolD = false;
 
     ent.addEventListener("click", function () {
+        if (!boolA){
         Entree1.classList.toggle('visible');
         Entree1.classList.toggle('invisible');
         boolA = !boolA;
+    }
         if (boolB) {
             Plat1.classList.remove('visible')
             Plat1.classList.add('invisible')
@@ -37,9 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
     pla.addEventListener("click", function () {
+        if (!boolB){
         Plat1.classList.toggle('visible');
         Plat1.classList.toggle('invisible');
         boolB = !boolB
+        }
         if (boolA) {
             Entree1.classList.remove('visible')
             Entree1.classList.add('invisible')
@@ -60,9 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
     boiss.addEventListener("click", function () {
+        if (!boolD){
         Boisson1.classList.toggle('visible');
         Boisson1.classList.toggle('invisible');
         boolD = !boolD
+        }
         if (boolA) {
             Entree1.classList.remove('visible')
             Entree1.classList.add('invisible')
@@ -83,9 +89,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
     dess.addEventListener("click", function () {
+        if (!boolC){
         Dessert1.classList.toggle('visible');
         Dessert1.classList.toggle('invisible');
         boolC = !boolC
+        }
         if (boolB) {
             Plat1.classList.remove('visible')
             Plat1.classList.add('invisible')
