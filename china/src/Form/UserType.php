@@ -2,25 +2,33 @@
 
 namespace App\Form;
 
-use App\Entity\Booking;
 use App\Entity\User;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Booking;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $password = $options['data']->getPassword();
         $builder
             ->add('email')
-            ->add('roles')
-            ->add('password')
+      //      ->add('roles')
+            ->add('password', HiddenType::class, [
+                'data' => $password,
+            ])
+            ->add('confirmPassword', HiddenType::class, [
+                'data' => $password,
+            ])
             ->add('prenom')
             ->add('nom')
             ->add('tel')
-           ->add('bookings', EntityType::class)
+   //        ->add('bookings', Booking::class, ['mapped' => false])
         ;
     }
 
