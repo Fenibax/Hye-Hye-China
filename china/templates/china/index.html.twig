@@ -57,44 +57,59 @@ comme dans la cuisine chinoise américaine et la cuisine chinoise canadienne.
 
 {# Image en fond, Section pour les evenements #}
 
-<div class="bloc2">
+<div class="container-fluid">
+			<div class="bloc2 row">
 
-<div>
-<h2>NOS ÉVENEMENTS</h2>
-<p>--------Le restaurant HAY-HAY CHINA---------<br>
-Organise des événements spécialement pour vous divertir pour accompagner vos délices lors de vos soirées.<br>
-Des soirées karaokés et des soirées dansantes proposées une fois par semaine et chaque.</p>
-</div>
-<a href="{{path('evenements')}}"><img src="asset\images\pexels-photo-event5.jpeg" alt=""></a>
-</div>
-
-
-{# Texte avec des icones, je sais pas comment appelé cette partie #}
-
-<div class="bloc5">
+				<div class="col-12 col-md-6">
+					<h2>Nos évènements</h2>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet libero aut nisi quidem, placeat excepturi inventore omnis quibusdam itaque accusamus! Sunt, beatae molestiae a aliquam amet consequatur. Quam, facere non? Non in error, qui quae et officiis sequi placeat illum aspernatur nesciunt facilis deserunt dicta ea? Eaque consequatur dolorem mollitia rerum deleniti. Ex fugiat incidunt perferendis reiciendis rem magnam odio. Reprehenderit, odit doloremque sunt itaque quod quibusdam accusamus repellendus voluptates sit ullam optio. Itaque hic debitis ipsam ex asperiores repellendus perspiciatis reprehenderit sint earum ad, nam quaerat, unde commodi aspernatur.</p>
+				</div>
+				<div class="col-12 col-md-6">
+					<a href="{{path('evenements')}}"><img src="asset\images\pexels-photo-event5.jpeg" alt=""></a>
+				</div>
+			</div>
 
 
-<div>
-<a href=""><h4> <i class="far fa-calendar-plus"></i>  NOS PLATS</h4></a>
-<p>Le restaurant HAY-HAY CHINA vous propose ses différents plats ou vous pourrez découvrir de nouvelles saveurs avec un gout indescriptible!</p>
-</div>
+			{# Texte avec des icones, je sais pas comment appelé cette partie #}
 
-<div>
-<a href=""><h4> <i class="fas fa-utensils"></i>  SITE OFFICIEL RÉSERVATIONS EN LIGNE</h4></a>
-<p>Vous pourrez réserver votre table à l'avance grâce à notre formulaire d'inscription et notre calendrier en ligne mis à votre disposition!
-ATTENTION!!! Pour vos réservations à l'avance sachez que vous pourrez bénéficier de réduction sur nos plats de -15%. N'hésitez pas à demander votre carte de fidélité
-qui sera accordé aux 250 premières personnes!</p>
-</div>
+			<div class="bloc5 row">
 
-<div>
-<a href=""><h4> <i class="fas fa-calendar-week"></i>ÉVENEMENTS</h4></a>
-<p>Le restaurant HAY-HAY CHINA met à votre dispositon un nouveau concept: des ÉVENEMENTS à ne surtout pas raté: 
-<br>Des soirées dansantes et des soirées karaoké</p>
-</div>
 
-</div>
+				<div class="col-12 col-md-6">
+					<a href="{{path('cartesemaine')}}">
+						<h4>
+							<i class="far fa-calendar-plus"></i>NOS PLATS</h4>
+					</a>
+					<p>Le restaurant HAY-HAY CHINA vous propose ses différents plats ou vous pourrez découvrir de nouvelles saveurs avec un gout indescriptible!</p>
+				</div>
 
-</main>
+				<div class="col-12 col-md-6">
+					<a href="">
+						<h4>
+							<i class="fas fa-utensils"></i>SITE OFFICIEL RÉSERVATIONS EN LIGNE</h4>
+					</a>
+					<p>Vous pourrez réserver votre table à l'avance grâce à notre formulaire d'inscription et notre calendrier en ligne mis à votre disposition! ATTENTION!!! Pour vos réservations à l'avance sachez que vous pourrez bénéficier de réduction sur nos plats de -15%. N'hésitez pas à demander votre carte de fidélité qui sera accordé aux 250 premières personnes!</p>
+				</div>
+
+				<div class="col-12 col-md-6">
+					<a href="{{path('evenements')}}">
+						<h4>
+							<i class="fas fa-calendar-week"></i>ÉVENEMENTS</h4>
+					</a>
+					<p>Le restaurant HAY-HAY CHINA met à votre dispositon un nouveau concept: des ÉVENEMENTS à ne surtout pas raté:Des soirées dansantes et des soirées karaoké</p>
+				</div>
+
+        <div class="col-12 col-md-6">
+					<a href="{{path('Hye')}}">
+						<h4>
+							<i class="fas fa-heading"></i></i>LE RESTAURANT</h4>
+					</a>
+					<p>Découvrez l'histoire de notre restaurant !!!</p>
+				</div>
+
+			</div>
+		</div>
+	</main>
 
 
 
