@@ -164,7 +164,8 @@ footer{
     background-size: cover; 
     color: white;
     border: 4mm ridge rgb(104, 31, 12);
-    position: fixed; 
+    width: 100%;
+    position: sticky; 
     bottom: 0;   
 }
 
