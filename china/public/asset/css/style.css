@@ -274,3 +274,9 @@ footer{
     width: 25%;
     height: 30%;
 }
+.lefab{
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+
+}
