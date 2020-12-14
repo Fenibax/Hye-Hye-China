@@ -6,14 +6,19 @@ use App\Entity\Booking;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class BookingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('beginAt')
-            ->add('endAt')
+            ->add('beginAt', DateTimeType::class, [
+                'widget' => 'single_text'
+         ])
+            ->add('endAt', DateTimeType::class, [
+                'widget' => 'single_text'
+         ])
             ->add('title')
         ;
     }
