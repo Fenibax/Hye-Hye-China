@@ -264,3 +264,19 @@ footer{
     position : relative;
     margin: 0 auto;
 }
+
+.fab{
+    
+    font-size: 3em;
+    width: 20%;
+}
+.rounded{
+    width: 25%;
+    height: 30%;
+}
+.lefab{
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+
+}
