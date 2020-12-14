@@ -165,7 +165,7 @@ footer{
     color: white;
     border: 4mm ridge rgb(104, 31, 12);
     width: 100%;
-    position: sticky; 
+
     bottom: 0;   
 }
 
@@ -255,4 +255,12 @@ footer{
 
 .fc td{
     background-color: rgba(0, 0, 0, 0.151);
+}
+
+.hyeStar{
+    width: 85%;
+    overflow: hidden;
+    background-color: black;
+    position : relative;
+    margin: 0 auto;
 }

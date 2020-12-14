@@ -30,7 +30,7 @@ class BookingController extends AbstractController
  //       $booking = $repo->findByBookingByUser($user->getId());
  $userId = $this->getUser()->getId();
  $booking = $userRepository->findByBookingByUser($userId);
- dump($userRepository);
+
          $tab = $booking->getBookings();
 
          $fidelity = new Fidelity();
