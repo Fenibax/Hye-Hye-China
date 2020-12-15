@@ -2,8 +2,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Nouvelle réservation{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+    
+{% endblock %}
 
 {% block body %}
+
 {% if app.user %}
     <h1>Nouvelle réservation</h1>
 
@@ -13,5 +19,19 @@
         {% else %}
         <p>Veuillez vous connectez <a class="nav-link" href="{{path('app_login')}}"> <button>ici</button> </a> ou vous inscrire <a class="nav-link" href="{{path('registration')}}"><button>la</button></a> </p>
     {% endif %}
+
+    {% block javascripts %}
+    {{ parent() }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker();
+        });
+    </script>
 {% endblock %}
+
+
+{% endblock %}
+
+
 
