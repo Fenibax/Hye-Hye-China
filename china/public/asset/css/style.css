@@ -6,7 +6,7 @@
 .carousel-caption{
     color: rgb(250, 248, 248);
     font-weight: bold;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.61);
     width: 70%;
     height: 35%;
     border-radius: 30px;
