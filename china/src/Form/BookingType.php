@@ -15,13 +15,13 @@ class BookingType extends AbstractType
         $builder
             ->add('beginAt', DateTimeType::class, [
                 'widget' => 'single_text',
-                'attr' => ['class' => 'js-datepicker'],
+         //       'attr' => ['class' => 'js-datepicker'],
                 'label' => 'Date de début de réservation'
          //       'attr' => array( 'placeholder' => '01/12/2020' )
          ])
             ->add('endAt', DateTimeType::class, [
                 'widget' => 'single_text',
-                'attr' => ['class' => 'js-datepicker'],
+        //        'attr' => ['class' => 'js-datepicker'],
                 'label' => 'Date de fin de réservation'
          ])
             ->add('title')

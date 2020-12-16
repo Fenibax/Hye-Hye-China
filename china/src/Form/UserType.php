@@ -17,18 +17,22 @@ class UserType extends AbstractType
     {
         $password = $options['data']->getPassword();
         $builder
+            ->add('prenom')
+            ->add('nom')
             ->add('email')
-      //      ->add('roles')
+            //      ->add('roles')
             ->add('password', HiddenType::class, [
                 'data' => $password,
             ])
+
             ->add('confirmPassword', HiddenType::class, [
                 'data' => $password,
             ])
-            ->add('prenom')
-            ->add('nom')
+
             ->add('tel')
-   //        ->add('bookings', Booking::class, ['mapped' => false])
+            ->add('password', PasswordType::class)
+            ->add('confirmPassword', PasswordType::class)
+            //        ->add('bookings', Booking::class, ['mapped' => false])
         ;
     }
 
