@@ -3,6 +3,8 @@
 {% block body %}
   <button type="button" class="btn btn-secondary"> <a href="{{ path('booking_new') }}">Réservez une table</a></button>
   <br> <br>
+   <button type="button" class="btn btn-secondary"> <a href="{{ path('booking_index') }}">Vos réservation</a></button>
+    <br> <br>
 
     <div id="calendar-holder"></div>
 {% endblock %}
@@ -50,4 +52,6 @@
             calendar.render();
         });
     </script>
+
+   
 {% endblock %}
